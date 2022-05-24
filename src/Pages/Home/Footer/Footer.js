@@ -34,26 +34,26 @@ const Footer = () => {
                         <div className="text-light opacity-75 pt-2">
                             <div className="d-flex align-items-center pt-2">
                                 <i className="fas fa-home px-2"></i>
-                                <span>Dhaka, Bangladesh</span>
+                                <span>Feni, Bangladesh</span>
                             </div>
                             <div className="d-flex align-items-center pt-2">
                                 <i className="far fa-envelope px-2"></i>
-                                <span>support@gmail.com</span>
+                                <span>ajhar@gmail.com</span>
                             </div>
                             <div className="d-flex align-items-center pt-2">
                                 <i className="fas fa-phone px-2"></i>
-                                <span>+01 234 567 89</span>
+                                <span>+01 6390 760 52</span>
                             </div>
                             <div className="d-flex align-items-center pt-2">
                                 <i className="fas fa-print px-2"></i>
-                                <span>+01 234 545 80</span>
+                                <span>+01 6390 760 52</span>
                             </div>
                         </div>
                     </Col>
                 </Row>
                 <hr className="mt-5 pb-0" />
                 <div className="text-center text-muted">
-                    <span> &#169; Copyright Trade Villa 2022</span>
+                    <span> &#169; Copyright Next Shop 2022</span>
                 </div>
             </Container>
         </div>
