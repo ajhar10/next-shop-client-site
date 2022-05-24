@@ -1,0 +1,9 @@
+.banner-section{
+    background-image: url('../../../images/banner-bg.jpg');
+    background-size: cover;
+    height: 580px;
+}
+.banner-title{
+    font-size: 65px;
+    font-weight: 700;
+}

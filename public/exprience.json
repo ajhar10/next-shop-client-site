@@ -1,0 +1,18 @@
+[{
+        "_id": "1",
+        "icon": "https://i.ibb.co/9Z04gss/icon1.png",
+        "number": "164",
+        "description": "Our Sell This Year"
+    }, {
+        "_id": "2",
+        "icon": "https://i.ibb.co/g6pK3p0/icon2.png",
+        "number": "975",
+        "description": "Happy Client"
+    },
+    {
+        "_id": "3",
+        "icon": "https://i.ibb.co/WgZQWw8/icon3.png",
+        "number": "544",
+        "description": "Won Rewards"
+    }
+]
