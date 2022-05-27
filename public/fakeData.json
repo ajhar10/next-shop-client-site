@@ -1,5 +1,5 @@
-[{
-        "_id": 1,
+[
+    {
         "name": "Tape Measure",
         "image": "https://i.ibb.co/VmHNSbw/t1.webp",
         "description": "A standard tape measure is used for all kinds of field measurements",
@@ -8,7 +8,6 @@
         "availableItems": "20"
     },
     {
-        "_id": 2,
         "name": "Hammer",
         "image": "https://i.ibb.co/VL9SbNy/t2.webp",
         "description": "A hammer is used to secure electrical boxes equipped with nail-on brackets to wall studs and other framing members in a home",
@@ -17,7 +16,6 @@
         "availableItems": "20"
     },
     {
-        "_id": 3,
         "name": "Torpedo Level",
         "image": "https://i.ibb.co/K71kHDZ/t3.webp",
         "description": "A small level, such as a torpedo level, fits easily in a tool pouch and is used to make sure your work is level and plumb.",
@@ -26,7 +24,6 @@
         "availableItems": "20"
     },
     {
-        "_id": 4,
         "name": "Voltmeter ",
         "image": "https://i.ibb.co/6wdCY9H/t4.webp",
         "description": "A voltmeter is used to read voltage levels and verify that circuits are “live” or off.",
@@ -35,7 +32,6 @@
         "availableItems": "20"
     },
     {
-        "_id": 5,
         "name": "Voltmeter ",
         "image": "https://i.ibb.co/6wdCY9H/t4.webp",
         "description": "A voltmeter is used to read voltage levels and verify that circuits are “live” or off.",
@@ -44,7 +40,6 @@
         "availableItems": "20"
     },
     {
-        "_id": 6,
         "name": "Voltmeter ",
         "image": "https://i.ibb.co/6wdCY9H/t4.webp",
         "description": "A voltmeter is used to read voltage levels and verify that circuits are “live” or off.",

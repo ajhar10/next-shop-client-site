@@ -5,7 +5,7 @@ import Product from '../Product/Product';
 const HighlightProducts = () => {
     const [products, setProducts] = useState([]);
     useEffect(() => {
-        fetch('fakeData.json')
+        fetch('http://localhost:5000/products')
             .then(res => res.json())
             .then(data => {
                 const slice = data.slice(0, 6);

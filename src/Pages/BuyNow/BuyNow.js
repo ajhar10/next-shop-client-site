@@ -5,7 +5,7 @@ import { useForm } from 'react-hook-form';
 import { useParams } from 'react-router';
 import auth from '../../firebase.init';
 const axios = require('axios');
-const Swal = require('sweetalert2')
+// const Swal = require('sweetalert2')
 
 
 const BuyNow = () => {
@@ -29,21 +29,21 @@ const BuyNow = () => {
             axios.post('http://localhost:5000/addOrder', data)
                 .then(result => {
                     if (result.data.insertedId) {
-                        Swal.fire(
-                            'Successfully!',
-                            'Please Check your Email for your orders confirmation!',
-                            'success'
-                        )
+                        // Swal.fire(
+                        //     'Successfully!',
+                        //     'Please Check your Email for your orders confirmation!',
+                        //     'success'
+                        // )
                     }
                 })
         }
 
         else {
-            Swal.fire({
-                title: 'Error',
-                text: 'Minimum Order ' + product.minOrder + ' and Minimum Order ' + product.availableItems,
-                confirmButtonText: 'Ok'
-            })
+            // Swal.fire({
+            //     title: 'Error',
+            //     text: 'Minimum Order ' + product.minOrder + ' and Minimum Order ' + product.availableItems,
+            //     confirmButtonText: 'Ok'
+            // })
         }
     };
 
