@@ -3,8 +3,8 @@ import pageNotFoundImg from '../../images/page-not-found.png';
 
 const NotFound = () => {
     return (
-        <div className="d-flex align-items-center justify-content-center" style={{ backgroundColor: '#F7F9FB' }}>
-            <img src={pageNotFoundImg} alt="" />
+        <div className="d-flex align-items-center justify-content-center my-3" style={{ backgroundColor: '#F7F9FB' }}>
+            <img className='img-fluid' src={pageNotFoundImg} alt="" />
         </div>
     );
 };

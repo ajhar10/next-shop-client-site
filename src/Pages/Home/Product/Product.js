@@ -1,10 +1,15 @@
 import React from 'react';
 import { Card, Col, Button } from 'react-bootstrap';
+import { useNavigate } from 'react-router-dom';
 
 
 const Product = ({ product }) => {
     const { name, price, image, description, minOrder, availableItems, _id } = product;
 
+    const navigate = useNavigate();
+    const handleNavigate = (id) => {
+        navigate(`/buyNow/${id}`);
+    }
     return (
         <Col xs={12} md={4}>
             <Card className="text-center my-3">
@@ -18,7 +23,7 @@ const Product = ({ product }) => {
                     <h6>Available Items: {availableItems}</h6>
                     <div className="d-flex justify-content-around align-items-center">
                         <p className="fw-bold fs-5">${price}</p>
-                        <Button variant="warning" className="rounded-pill px-4">Buy Now</Button>
+                        <Button onClick={() => handleNavigate(_id)} variant="info" className="rounded-pill px-4">Buy Now</Button>
                     </div>
                 </Card.Body>
             </Card>

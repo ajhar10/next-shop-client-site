@@ -9,6 +9,7 @@ import RequireAuth from './Pages/Login/RequireAuth/RequireAuth';
 import BuyNow from './Pages/BuyNow/BuyNow';
 import Dashboard from './Pages/Dashboard/Dashboard/Dashboard';
 import Blogs from './Pages/Blogs/Blogs';
+import Portfolio from './Pages/Portfolio/Portfolio';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/blogs" element={<Blogs />} />
+        <Route path="/portfolio" element={<Portfolio />} />
         <Route path="/buyNow/:productId" element={
           <RequireAuth>
             <BuyNow />
