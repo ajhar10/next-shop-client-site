@@ -7,7 +7,7 @@ const Swal = require('sweetalert2')
 const AddNewProduct = () => {
     const { register, handleSubmit, reset } = useForm();
     const onSubmit = data => {
-        axios.post('http://localhost:5000/addProduct', data)
+        axios.post('https://stark-thicket-86724.herokuapp.com/addProduct', data)
             .then(result => {
                 if (result.data.insertedId) {
                     Swal.fire(

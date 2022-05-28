@@ -1,9 +1,10 @@
 import React, { useRef } from 'react';
 import { Button, Form } from 'react-bootstrap';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useCreateUserWithEmailAndPassword, useUpdateProfile } from 'react-firebase-hooks/auth';
 import auth from '../../../firebase.init';
 import SocialLogin from '../SocialLogin/SocialLogin';
+import useToken from '../../../hooks/useToken';
 
 
 
@@ -16,11 +17,16 @@ const Register = () => {
     ] = useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
     const [updateProfile, updating, updateError] = useUpdateProfile(auth);
 
+    const [token] = useToken(user);
+
     const navigate = useNavigate();
 
     const navigateLogin = () => {
         navigate('/login');
     }
+
+    const location = useLocation();
+    let from = location.state?.from?.pathname || "/";
 
     const nameRef = useRef('');
     const emailRef = useRef('');
@@ -40,8 +46,8 @@ const Register = () => {
         navigate('/home');
     }
 
-    if (user) {
-        console.log('user', user);
+    if (token) {
+        navigate(from, { replace: true });
     }
     return (
         <div className='container mx-auto w-50 p-5 rounded' style={{ margin: '100px 0', backgroundColor: '#F3F3F3' }}>

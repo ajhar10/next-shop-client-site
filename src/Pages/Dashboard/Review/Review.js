@@ -14,7 +14,7 @@ const Review = () => {
     const { register, handleSubmit, reset } = useForm();
     const onSubmit = data => {
         data.rating = rating;
-        axios.post('http://localhost:5000/review', data)
+        axios.post('https://stark-thicket-86724.herokuapp.com/review', data)
             .then(result => {
                 if (result.data.insertedId) {
                     Swal.fire(

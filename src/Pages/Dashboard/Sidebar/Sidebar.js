@@ -41,6 +41,12 @@ const Sidebar = () => {
                                 <i className="far fa-share-square"></i><span> Add Product</span>
                             </Link>
                         </li>
+
+                        <li>
+                            <Link to="/dashboard/manageAllOrders" className="text-dark">
+                                <i className="fas fa-tasks"></i><span> Manage Orders</span>
+                            </Link>
+                        </li>
                     </>
                 }
             </ul>

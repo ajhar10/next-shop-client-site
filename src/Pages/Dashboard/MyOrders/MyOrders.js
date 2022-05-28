@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { Col, Table } from 'react-bootstrap';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../../firebase.init';
-const Swal = require('sweetalert2')
+const Swal = require('sweetalert2');
 
 const MyOrders = () => {
 
@@ -12,7 +12,7 @@ const MyOrders = () => {
 
     useEffect(() => {
         if (user) {
-            fetch(`http://localhost:5000/myOrders/${user?.email}`, {
+            fetch(`https://stark-thicket-86724.herokuapp.com/myOrders/${user?.email}`, {
                 method: 'GET',
                 headers: {
                     'authorization': `Bearer ${localStorage.getItem('accessToken')}`
@@ -29,17 +29,15 @@ const MyOrders = () => {
         Swal.fire({
             title: 'Are you sure?',
             text: "You won't be able to revert this!",
-            icon: 'warning',
             showCancelButton: true,
             confirmButtonColor: '#3085d6',
             cancelButtonColor: '#d33',
             confirmButtonText: 'Yes, delete it!'
         }).then((result) => {
-            if (result.isConfirmed) {
-
-                axios.delete(`http://localhost:5000/delete/${id}`)
+            if (result) {
+                axios.delete(`https://stark-thicket-86724.herokuapp.com/delete/${id}`)
                     .then(result => {
-                        if (result.data.deletedCount) {
+                        if (result.data.deletedCount > 0) {
                             const remain = myOrders.filter(order => order._id !== id);
                             setMyOrders(remain)
                         }
@@ -51,7 +49,6 @@ const MyOrders = () => {
                 )
             }
         })
-
     }
 
     return (
@@ -72,17 +69,16 @@ const MyOrders = () => {
                         </thead>
                         <tbody>
                             {
-                                myOrders.map((order, index) => <tr>
+                                myOrders?.map((order, index) => <tr key={order._id}>
                                     <td className="text-center">{index + 1}</td>
                                     <td>{order?.pdName || 'Name Loading'}</td>
                                     <td>{order.email}</td>
                                     <td className="text-center">{order?.status}</td>
                                     <td className="text-center">
-                                        <button onClick={() => handleCancel(order._id)} className="btn btn-danger btn-sm"><i className="fas fa-trash"></i></button>
+                                        <button onClick={() => handleCancel(order._id)} className="btn btn-danger btn-sm"><i className="fas fa-trash"></i>Delete</button>
                                     </td>
                                 </tr>)
                             }
-
                         </tbody>
                     </Table>
                 </Col>

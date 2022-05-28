@@ -5,7 +5,7 @@ import Product from '../Product/Product';
 const HighlightProducts = () => {
     const [products, setProducts] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/products')
+        fetch('https://stark-thicket-86724.herokuapp.com/products')
             .then(res => res.json())
             .then(data => {
                 const slice = data.slice(0, 6);

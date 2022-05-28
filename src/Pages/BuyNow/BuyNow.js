@@ -15,7 +15,7 @@ const BuyNow = () => {
     const [product, setProduct] = useState({});
 
     useEffect(() => {
-        fetch(`http://localhost:5000/products/${productId}`)
+        fetch(`https://stark-thicket-86724.herokuapp.com/products/${productId}`)
             .then(res => res.json())
             .then(data => setProduct(data))
     }, []);
@@ -26,7 +26,7 @@ const BuyNow = () => {
 
         if (product.minOrder < minimumOrd && product.availableItems >= minimumOrd) {
             data.status = 'Pending';
-            axios.post('http://localhost:5000/addOrder', data)
+            axios.post('https://stark-thicket-86724.herokuapp.com/addOrder', data)
                 .then(result => {
                     if (result.data.insertedId) {
                         Swal.fire(
@@ -37,7 +37,6 @@ const BuyNow = () => {
                     }
                 })
         }
-
         else {
             Swal.fire({
                 title: 'Error',
@@ -46,7 +45,6 @@ const BuyNow = () => {
             })
         }
     };
-
 
     return (
         <div >
@@ -69,9 +67,14 @@ const BuyNow = () => {
                             </Card.Body>
 
                             <form onSubmit={handleSubmit(onSubmit)}>
-                                <input className="form-control" {...register("name", { required: true })} value={user?.displayName} /> <br />
-                                <input className="form-control" {...register("email")} value={user?.email} /> <br />
-                                <input className="form-control" {...register("pdName")} value={product?.name} /> <br />
+                                <input readOnly className="form-control" {...register("name", { required: true })} value={user?.displayName} /> <br />
+                                <input readOnly className="form-control" {...register("email")} value={user?.email} /> <br />
+                                {
+                                    product?.name &&
+                                    <>
+                                        <input readOnly className="form-control" {...register("pdName")} value={product?.name} /> <br />
+                                    </>
+                                }
                                 <input className="form-control" type="number" {...register("minOrder")} placeholder="Order amount" /> <br />
                                 <input className="form-control" {...register("address")} placeholder="Your address" /> <br />
                                 <input className="form-control" type="number" {...register("phone")} placeholder="Your phone" /> <br />
